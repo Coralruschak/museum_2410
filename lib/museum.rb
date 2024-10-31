@@ -13,18 +13,20 @@ class Museum
   end
 
   def recommend_exhibits(patron)
-    museum_exhibits = []
-    @exhibits.each do |element|
-      museum_exhibits << element.name
+    commonalities = []
+    @exhibits.each do |exhibit|
+      if patron.interests.include?(exhibit.name)
+        commonalities << exhibit
+      end
     end
-    patron.interests & museum_exhibits
+    commonalities
   end
 
   def admit(patron)
     @patrons << patron
   end
 
-  def patrons_by_exhibit_interest
+  def patrons_by_exhibit_interest(info)
     
   end
 
