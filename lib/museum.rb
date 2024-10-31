@@ -33,4 +33,6 @@ class Museum
   end
 
   def announce_lottery_winner(exhibit_lottery_winner)
+    
+  end
 end
