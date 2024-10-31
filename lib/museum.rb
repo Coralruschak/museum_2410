@@ -13,7 +13,11 @@ class Museum
   end
 
   def recommend_exhibits(patron)
-    
+    museum_exhibits = []
+    @exhibits.each do |element|
+      museum_exhibits << element.name
+    end
+    patron.interests & museum_exhibits
   end
 
   def admit(patron)
